@@ -98,9 +98,8 @@ def convolute_2d(input_matrix, kernel_matrix):
 
     for i in range(output_matrix_dim[0]):
         for j in range(output_matrix_dim[1]):
-
-            segment = input_matrix[i: i + output_matrix_dim.shape[0], j:j + output_matrix_dim.shape[1]]
-            output_matrix[i,k] = np.sum(segment * kernel_matrix)
+            segment = input_matrix[i:i + output_matrix_dim[0],j:j + output_matrix_dim[1]]
+            output_matrix[i,j] = np.sum(segment * kernel_matrix)
     return output_matrix
 
 
